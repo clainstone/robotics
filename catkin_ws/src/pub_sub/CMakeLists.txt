@@ -4,6 +4,8 @@ project(pub_sub)
 ## Find catkin and any catkin packages
 find_package(catkin REQUIRED COMPONENTS roscpp std_msgs message_generation)
 
+generate_messages(DEPENDENCIES std_msgs)
+
 ## Declare a catkin package. It provides important metadata about your package and specifies what your
 ## package exports to other packages that depend on it.
 catkin_package(CATKIN_DEPENDS message_runtime)
@@ -21,5 +23,5 @@ target_link_libraries(sub ${catkin_LIBRARIES})
 add_message_files(FILES
   Num.msg
 )
-generate_messages(DEPENDENCIES std_msgs)
+
 
