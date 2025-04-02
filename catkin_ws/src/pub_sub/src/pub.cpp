@@ -14,7 +14,7 @@ int main(int argc, char **argv){
 	//the last argument is the size of the buffer : queue size
 
 	//"chatter" is the name of the topic
-	ros::Publisher chatter_pub = n.advertise<pub_sub::Num>("chatter", 1);
+	ros::Publisher chatter_pub = n.advertise<pub_sub::Num>("chatter", 1000);
 
 	//loop _rate function creates a new object of type Rate
 	ros::Rate loop_rate(10);
@@ -43,7 +43,6 @@ int main(int argc, char **argv){
 			chatter_pub.publish(msg);			
 			ros::spinOnce();
 			loop_rate.sleep();
-
   	}
 
 
