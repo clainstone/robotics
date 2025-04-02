@@ -20,7 +20,7 @@ int main(int argc, char **argv){
 	ros::Rate loop_rate(10);
 
 	while (ros::ok()){
-		if(false){
+		if(true){
 	    	std_msgs::String msg;
 
                 msg.data = "hello world!";
@@ -45,7 +45,7 @@ int main(int argc, char **argv){
 			loop_rate.sleep();
   	}
 
-
+	}
   	return 0;
-}
+
 }
