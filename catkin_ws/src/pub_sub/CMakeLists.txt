@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(pub_sub)
-
+add_message_files(FILES
+  Num.msg
+)
 ## Find catkin and any catkin packages
 find_package(catkin REQUIRED COMPONENTS roscpp std_msgs message_generation)
 
@@ -20,8 +22,5 @@ add_dependencies(pub pub_sub_generate_messages_cpp)
 add_executable(sub src/sub.cpp)
 target_link_libraries(sub ${catkin_LIBRARIES})
 
-add_message_files(FILES
-  Num.msg
-)
 
 
