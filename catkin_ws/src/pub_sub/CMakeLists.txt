@@ -9,7 +9,7 @@ catkin_package()
 
 ## Build talker and listener
 include_directories(include ${catkin_INCLUDE_DIRS})
-
+## pub is the name of the node visible to rosmaster
 add_executable(pub src/pub.cpp)
 target_link_libraries(pub ${catkin_LIBRARIES})
 
