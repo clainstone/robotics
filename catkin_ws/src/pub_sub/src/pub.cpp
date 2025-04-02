@@ -40,6 +40,11 @@ int main(int argc, char **argv){
 			i=(i+1)%1000;
 			pub_sub::Num msg;
 			msg.num =i;
+			ROS_INFO("%s", msg.data.c_str());
+			chatter_pub.publish(msg);			
+			ros::spinOnce();
+			loop_rate.sleep();
+
   	}
 
 
