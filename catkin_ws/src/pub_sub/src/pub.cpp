@@ -17,7 +17,7 @@ int main(int argc, char **argv){
 	ros::Publisher chatter_pub = n.advertise<pub_sub::Num>("chatter", 1000);
 
 	//loop _rate function creates a new object of type Rate
-	ros::Rate loop_rate(1);
+	ros::Rate loop_rate(1000);
 
 	while (ros::ok()){
 		if(false){
