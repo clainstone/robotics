@@ -16,8 +16,11 @@ int main(int argc, char** argv)
   ros::init(argc, argv, "subscriber");
 
   ros::NodeHandle n;
-
+  //é una sintassi accorpata: definisce un oggetto sub1 di tipo message_filters::Subscriber<geometry_msgs::Vector3Stamped> e lo inizializza con il nodo n e il topic "topic1" con una coda di 1 messaggio
+  // e lo costruisce direttamente
   message_filters::Subscriber<geometry_msgs::Vector3Stamped> sub1(n, "topic1", 1);
+  //TimeSynchronizer synchronizes incoming message filters by the timestamps contained in their messages' headers. TimeSynchronizer
+  // listens on multiple input message filters fs , and invokes the callback when it has a collection of messages with matching timestamps.
   message_filters::Subscriber<geometry_msgs::Vector3Stamped> sub2(n, "topic2", 1);
   message_filters::TimeSynchronizer<geometry_msgs::Vector3Stamped, geometry_msgs::Vector3Stamped> sync(sub1, sub2, 10);
   sync.registerCallback(boost::bind(&callback, _1, _2));

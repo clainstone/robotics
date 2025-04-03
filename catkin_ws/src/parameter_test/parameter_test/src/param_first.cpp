@@ -1,6 +1,6 @@
 #include <ros/ros.h>
 #include <string>
-
+//This solution is a little bit time consuming and inefficient
 int main(int argc, char **argv)
 {
   // Initialize the ROS node with the name "my_node"
@@ -39,6 +39,9 @@ int main(int argc, char **argv)
   }
 
   // The node can now use these parameters as needed
+  // spin() non fa spinnare tutto il metodo, semplicemente controlla se ci sono callback
+  // da eseguire, se non ci sono, il programma termina, il loop del pub nei casi precedenti è dato 
+  //dal while (ros::ok())
   ros::spin();
   return 0;
 }

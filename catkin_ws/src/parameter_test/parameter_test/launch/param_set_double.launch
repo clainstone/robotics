@@ -8,7 +8,7 @@
     <!-- Private parameter for the node "my_node" -->
     <param name="private_param" value="node_specific_value" />
   </node>
-
+  <!-- Launch another instance of the same node with a different private parameter -->
   <node pkg="parameter_test" type="param_first" name="param_first1" output="screen">
   </node>
 </launch>

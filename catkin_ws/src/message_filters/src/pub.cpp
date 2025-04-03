@@ -21,7 +21,7 @@ int main(int argc, char **argv){
 	    
 		geometry_msgs::Vector3Stamped msg1;
 		geometry_msgs::Vector3Stamped msg2;
-		
+		//the problem is that different time stamps are setted in different parts of code(in different time instants)
 		msg1.header.stamp = ros::Time::now();
 		msg1.header.frame_id = "f1";
 		msg1.vector.x = 1;
